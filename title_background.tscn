@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqs7ioe0ladk1"]
+
+[ext_resource type="Script" path="res://title_background.gd" id="1_7lm52"]
+[ext_resource type="Texture2D" uid="uid://cwyjdith08yah" path="res://Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_qr1wq"]
+[ext_resource type="Texture2D" uid="uid://daw4j48mbi8bq" path="res://Sunny-land-files/Graphical Assets/environment/Props/house.png" id="3_xx6pb"]
+[ext_resource type="Texture2D" uid="uid://bdvgnescum4n1" path="res://Sunny-land-files/Graphical Assets/environment/Props/palm.png" id="4_cusan"]
+[ext_resource type="Texture2D" uid="uid://du4hwo8n3s6he" path="res://Sunny-land-files/Graphical Assets/environment/Props/pine.png" id="5_s0pjb"]
+[ext_resource type="Texture2D" uid="uid://ca4vdrats1wnf" path="res://Sunny-land-files/Graphical Assets/environment/Props/plant-house.png" id="6_d1n0m"]
+[ext_resource type="Texture2D" uid="uid://btnc0fut82sr1" path="res://Sunny-land-files/Graphical Assets/environment/Props/rock-1.png" id="7_ei573"]
+[ext_resource type="Texture2D" uid="uid://bw1si32mero62" path="res://Sunny-land-files/Graphical Assets/environment/Props/wooden-house.png" id="8_btpf2"]
+[ext_resource type="Texture2D" uid="uid://cineoq8yia0yg" path="res://Sunny-land-files/Graphical Assets/environment/Props/tree.png" id="9_mdtrt"]
+[ext_resource type="Texture2D" uid="uid://dnbgfu8tjqrte" path="res://Sunny-land-files/Graphical Assets/environment/Props/tree-house.png" id="10_cdffi"]
+[ext_resource type="Texture2D" uid="uid://l751d2lq8i20" path="res://Sunny-land-files/Graphical Assets/environment/Background/middle.png" id="11_mt1ec"]
+
+[node name="TitleBackground" type="ParallaxBackground"]
+script = ExtResource("1_7lm52")
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Back" type="Sprite2D" parent="Clouds"]
+position = Vector2(576, 320)
+scale = Vector2(2.99479, 2.69583)
+texture = ExtResource("2_qr1wq")
+
+[node name="Homes" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.75, 0)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="House" type="Sprite2D" parent="Homes"]
+position = Vector2(48, 368)
+texture = ExtResource("3_xx6pb")
+
+[node name="Palm" type="Sprite2D" parent="Homes"]
+position = Vector2(112, 320)
+texture = ExtResource("4_cusan")
+
+[node name="Pine" type="Sprite2D" parent="Homes"]
+position = Vector2(368, 368)
+texture = ExtResource("5_s0pjb")
+
+[node name="Plant-house" type="Sprite2D" parent="Homes"]
+position = Vector2(440, 360)
+texture = ExtResource("6_d1n0m")
+
+[node name="Rock-1" type="Sprite2D" parent="Homes"]
+position = Vector2(544, 376)
+texture = ExtResource("7_ei573")
+
+[node name="Wooden-house" type="Sprite2D" parent="Homes"]
+position = Vector2(704, 336)
+texture = ExtResource("8_btpf2")
+
+[node name="Tree" type="Sprite2D" parent="Homes"]
+position = Vector2(624, 336)
+texture = ExtResource("9_mdtrt")
+
+[node name="Tree-house" type="Sprite2D" parent="Homes"]
+position = Vector2(1064, 314)
+texture = ExtResource("10_cdffi")
+
+[node name="ForegroundTrees" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1232, 0)
+
+[node name="Middle" type="Sprite2D" parent="ForegroundTrees"]
+position = Vector2(89, 464)
+texture = ExtResource("11_mt1ec")
+
+[node name="Middle2" type="Sprite2D" parent="ForegroundTrees"]
+position = Vector2(265, 465)
+texture = ExtResource("11_mt1ec")
+
+[node name="Middle3" type="Sprite2D" parent="ForegroundTrees"]
+position = Vector2(441, 466)
+texture = ExtResource("11_mt1ec")
+
+[node name="Middle4" type="Sprite2D" parent="ForegroundTrees"]
+position = Vector2(617, 467)
+texture = ExtResource("11_mt1ec")
+
+[node name="Middle5" type="Sprite2D" parent="ForegroundTrees"]
+position = Vector2(793, 468)
+texture = ExtResource("11_mt1ec")
+
+[node name="Middle6" type="Sprite2D" parent="ForegroundTrees"]
+position = Vector2(969, 469)
+texture = ExtResource("11_mt1ec")
+
+[node name="Middle7" type="Sprite2D" parent="ForegroundTrees"]
+position = Vector2(1145, 470)
+texture = ExtResource("11_mt1ec")

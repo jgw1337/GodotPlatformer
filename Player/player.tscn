@@ -93,7 +93,7 @@ animations = [{
 [sub_resource type="Animation" id="Animation_55god"]
 resource_name = "Idle"
 length = 0.4
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -151,7 +151,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_0pmx7"]
 resource_name = "Jump"
 length = 0.2
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -244,7 +244,7 @@ _data = {
 "Run": SubResource("Animation_dxi4p")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_hwke8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -257,7 +257,9 @@ animation = &"Idle"
 frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
