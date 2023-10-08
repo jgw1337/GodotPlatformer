@@ -7,6 +7,6 @@ func _on_timer_timeout():
 	var rng = RandomNumberGenerator.new()
 	var randInt = rng.randi_range(100, 800)
 	
-	cherryTemp.position = Vector2(randInt, 175)
+	cherryTemp.position = Vector2(randInt, 230)
 	
 	add_child(cherryTemp)
