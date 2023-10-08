@@ -50,10 +50,13 @@ func _on_frog_death_body_entered(body):
 
 func _on_player_collision_body_entered(body):
 	if body.name == "MainCharacter":
-		body.health -= 3
+		Game.playerHp -= 3
 		death()
 	
 func death():
+	Game.gold += 5
+	Utils.saveGame()
+	
 	is_chasing = false
 	frog.play("Death");
 	await frog.animation_finished

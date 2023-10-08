@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c04nn0cj5pcer"]
+[gd_scene load_steps=9 format=3 uid="uid://c04nn0cj5pcer"]
 
 [ext_resource type="PackedScene" uid="uid://b81nnv35gj41x" path="res://Player/player.tscn" id="1_vh8cq"]
 [ext_resource type="PackedScene" uid="uid://cq53838enn5mw" path="res://world_background.tscn" id="2_wxwen"]
 [ext_resource type="Texture2D" uid="uid://f4lkkw276b2j" path="res://Sunny-land-files/Graphical Assets/environment/tileset.png" id="3_iaw6m"]
 [ext_resource type="PackedScene" uid="uid://cpceuws4d7nig" path="res://Enemies/frog.tscn" id="4_n22l2"]
-[ext_resource type="Script" path="res://HP.gd" id="5_cnhm0"]
+[ext_resource type="Script" path="res://hp.gd" id="5_m8ogm"]
+[ext_resource type="Script" path="res://gold.gd" id="6_8f5hu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hn7l"]
 texture = ExtResource("3_iaw6m")
@@ -453,4 +454,14 @@ offset_bottom = 88.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "HP"
-script = ExtResource("5_cnhm0")
+script = ExtResource("5_m8ogm")
+
+[node name="Gold" type="Label" parent="UI"]
+offset_left = 136.0
+offset_top = 80.0
+offset_right = 272.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Gold"
+script = ExtResource("6_8f5hu")
