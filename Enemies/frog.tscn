@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cpceuws4d7nig"]
+[gd_scene load_steps=23 format=3 uid="uid://cpceuws4d7nig"]
 
 [ext_resource type="Script" path="res://Enemies/frog.gd" id="1_8ahsr"]
 [ext_resource type="Texture2D" uid="uid://c4vkb540fin5l" path="res://Sunny-land-files/Graphical Assets/spritesheets/frog-idle.png" id="1_40upn"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0onmrhiu3hln" path="res://Sunny-land-files/Graphical Assets/spritesheets/frog-jump.png" id="2_lme1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlc41"]
-size = Vector2(27, 22)
+size = Vector2(22, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pf6l4"]
 atlas = ExtResource("1_syx5u")
@@ -81,9 +81,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5gmxt")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,12 +132,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_13t3g"]
 radius = 131.034
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6c7fm"]
+size = Vector2(15, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0r40"]
+size = Vector2(24, 12)
+
 [node name="Frog" type="CharacterBody2D"]
 position = Vector2(0, -10)
 script = ExtResource("1_8ahsr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, -1)
+position = Vector2(3, 2.5)
 shape = SubResource("RectangleShape2D_dlc41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -150,5 +156,19 @@ animation = &"Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_13t3g")
 
+[node name="FrogDeath" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrogDeath"]
+position = Vector2(2.5, 1)
+shape = SubResource("RectangleShape2D_6c7fm")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(3, 4)
+shape = SubResource("RectangleShape2D_t0r40")
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="FrogDeath" to="." method="_on_frog_death_body_entered"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
